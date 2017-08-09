@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Luz da Sabedoria</title>
     
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css', (env('APP_ENV') == 'production') ? 'https' : null) }}" rel="stylesheet">
@@ -79,7 +79,7 @@
 <header>
     <div class="container">
         <div class="intro-text">
-            <div class="intro-lead-in">Associação Benficente</div>
+            <div class="intro-lead-in">Associação Beneficiente Luz da Sabedoria</div>
             <div class="intro-heading">Você é mais forte do que imagina!</div>
             <a href="#services" class="page-scroll btn btn-xl">Saiba como ajudar!</a>
         </div>
@@ -204,14 +204,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-12 col-md-offset-2 col-md-4">
                 <div class="team-member">
                     <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
                     <h4>Rosa</h4>
                     <p class="text-muted">Lead Designer</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-12 col-md-4">
                 <div class="team-member">
                     <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
                     <h4>Carlos</h4>
