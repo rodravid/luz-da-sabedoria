@@ -12,17 +12,17 @@
     <title>Luz da Sabedoria</title>
     
     <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css', (env('APP_ENV') == 'production') ? 'https' : null) }}" rel="stylesheet">
+    <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css', config('app.protocol')) }}" rel="stylesheet">
     
     <!-- Custom Fonts -->
-    <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css', (env('APP_ENV') == 'production') ? 'https' : null) }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css', config('app.protocol')) }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     
     <!-- Theme CSS -->
-    <link href="{{ asset('/css/agency.min.css', (env('APP_ENV') == 'production') ? 'https' : null) }}" rel="stylesheet">
+    <link href="{{ asset('/css/agency.min.css', config('app.protocol')) }}" rel="stylesheet">
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -510,12 +510,12 @@
     </div>
 </div>
 
-<script src="{{ asset('/vendor/jquery/jquery.min.js', (env('APP_ENV') == 'production') ? 'https' : null) }}"></script>
-<script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js', (env('APP_ENV') == 'production') ? 'https' : null) }}"></script>
+<script src="{{ asset('/vendor/jquery/jquery.min.js', config('app.protocol')) }}"></script>
+<script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js', config('app.protocol')) }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha384-mE6eXfrb8jxl0rzJDBRanYqgBxtJ6Unn4/1F7q4xRRyIw7Vdg9jP4ycT7x1iVsgb" crossorigin="anonymous"></script>
-<script src="{{ asset('/js/jqBootstrapValidation.js', (env('APP_ENV') == 'production') ? 'https' : null) }}"></script>
-<script src="{{ asset('/js/contact_me.js', (env('APP_ENV') == 'production') ? 'https' : null) }}"></script>
-<script src="{{ asset('/js/agency.min.js', (env('APP_ENV') == 'production') ? 'https' : null) }}"></script>
+<script src="{{ asset('/js/jqBootstrapValidation.js', config('app.protocol')) }}"></script>
+<script src="{{ asset('/js/contact_me.js', config('app.protocol')) }}"></script>
+<script src="{{ asset('/js/agency.min.js', config('app.protocol')) }}"></script>
 
 </body>
 
