@@ -390,10 +390,7 @@
 </div>
 
 <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('/vendor/jquery-easing/1.3/jquery.easing.min.js') }}"></script>
-<script src="{{ asset('/js/jqBootstrapValidation.js') }}"></script>
-<script src="{{ asset('/js/contact_me.js') }}"></script>
+<script src="{{ asset('/js/minified.js') }}"></script>
 <script src="{{ asset('/js/agency.min.js') }}"></script>
 
 </body>
