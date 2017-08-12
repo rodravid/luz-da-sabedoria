@@ -12,16 +12,19 @@ let mix = require('laravel-mix');
  */
 
 mix.js([
-        'public/vendor/bootstrap/js/bootstrap.min.js',
-        'resources/assets/js/jquery-easing/1.3/jquery.easing.min.js',
-        'resources/assets/js/jqBootstrapValidation.js',
-        'resources/assets/js/contact_me.js'
+        'public/assets/website/vendor/bootstrap/js/bootstrap.min.js',
+        'app/Website/resources/assets/js/jquery-easing/1.3/jquery.easing.min.js',
+        'app/Website/resources/assets/js/jqBootstrapValidation.js',
+        'app/Website/resources/assets/js/contact_me.js'
     ], 'public/js/minified.js')
+    .js([
+        'resources/assets/js/app.js'
+    ], 'public/js/app.js')
     .styles([
-       'public/vendor/bootstrap/css/bootstrap.min.css',
-       'public/vendor/font-awesome/css/font-awesome.min.css',
+       'public/assets/website/vendor/bootstrap/css/bootstrap.min.css',
+       'public/assets/website/vendor/font-awesome/css/font-awesome.min.css',
        'public/css/agency.min.css',
-       'resources/assets/sass/app.scss'
+       'app/Website/resources/assets/sass/app.scss'
     ], 'public/css/app.css')
     .styles([
         'public/fonts/vendor/googleapis/droid-serif.css',

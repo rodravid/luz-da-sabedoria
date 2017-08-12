@@ -17,7 +17,6 @@ window._ = require('lodash');
  */
 
 window.Vue = require('vue');
-window.dropzone = require('dropzone');
 require('vue-resource');
 
 /**
