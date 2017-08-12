@@ -11,7 +11,7 @@ Route::group(['middleware' => ['web']], function () use ($route) {
 
     Route::group(['middleware' => ['auth:cms', 'cms']], function() use ($route) {
         Route::get('/', 'Dashboard\\DashboardController@index')->name('dashboard.show');
-
+        Route::post('settings/{key}/{value}', 'Settings\\SettingsController@store')->name('settings.store');
     });
 
 });

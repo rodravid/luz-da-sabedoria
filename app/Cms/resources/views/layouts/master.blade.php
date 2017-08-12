@@ -66,16 +66,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition sidebar-mini {{ $loggedUser->settings()->get('theme', 'skin-blue') }}">
+<body class="hold-transition sidebar-mini {{ cmsUser()->settings()->get('theme', 'skin-blue') }}">
 <div id="app" class="wrapper">
 
     <header class="main-header">
         <!-- Logo -->
         <a href="/cms" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><img src="{{ asset_cms('dist/img/logo-v.png') }}"></span>
+            <span class="logo-mini"><img src="{{ asset('images/logos/logo_versao-03.png') }}" height="50px"></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="{{ asset_cms('dist/img/logo-vinci.png') }}"></span>
+            <span class="logo-lg"><img src="{{ asset('images/logos/logo_versao-03.png') }}" height="50px"></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -86,36 +86,29 @@
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    {{--@if($loggedUser->isSuperAdmin())--}}
+                    {{--@if(cmsUser()->isSuperAdmin())--}}
                         {{--<li class="hidden-xs"><a href="{{ route('cms.clear-cache') }}"><span><i class="fa fa-minus-circle"></i> Limpar cache</span></a></li>--}}
                     {{--@endif--}}
-                    <!-- User Account: style can be found in dropdown.less -->
-                    {{--<li class="dropdown user user-menu">--}}
-                        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">--}}
-                            {{--<img src="{{ $loggedUser->profile_photo }}" class="user-image" alt="User Image">--}}
-                            {{--<span class="hidden-xs">{{ $loggedUser->name }}</span>--}}
-                        {{--</a>--}}
-                        {{--<ul class="dropdown-menu">--}}
-                            {{--<!-- User image -->--}}
-                            {{--<li class="user-header">--}}
-                                {{--<img src="{{ $loggedUser->profile_photo }}" class="img-circle" alt="User Image">--}}
-
-                                {{--<p>--}}
-                                    {{--{{ $loggedUser->name }} {!!  $loggedUser->office !!}--}}
-                                    {{--<small>Membro desde {{ $loggedUser->getCreatedAt()->format('M/Y') }}</small>--}}
-                                {{--</p>--}}
-                            {{--</li>--}}
-                            {{--<!-- Menu Footer-->--}}
-                            {{--<li class="user-footer">--}}
-                                {{--<div class="pull-left">--}}
-                                    {{--<a href="{{ route('cms.profile.show') }}" class="btn btn-default btn-flat"><i class="fa fa-edit"></i> Perfil</a>--}}
-                                {{--</div>--}}
-                                {{--<div class="pull-right">--}}
-                                    {{--<a href="{{ route('cms.logout') }}" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sair</a>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {{--<img src="{{ cmsUser()->profile_photo }}" class="user-image" alt="User Image">--}}
+                            <span class="hidden-xs">{{ cmsUser()->name }}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <p>
+                                    {{ cmsUser()->name }} {!!  cmsUser()->office !!}
+                                    <small>Membro desde {{ cmsUser()->getCreatedAt()->format('M/Y') }}</small>
+                                </p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-right">
+                                    <a href="{{ route('cms.logout') }}" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sair</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                     <!-- Control Sidebar Toggle Button -->
                     <li>
                         <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
@@ -141,15 +134,6 @@
 <!-- ./wrapper -->
 
 @section('scripts')
-
-    {{--<script type="text/javascript">--}}
-        {{--window.Vinci = {--}}
-            {{--config: {--}}
-                {{--cep: {!! json_encode(config('services.cep')) !!}--}}
-            {{--}--}}
-        {{--};--}}
-    {{--</script>--}}
-
     <!-- jQuery 2.2.0 -->
     <script src="{{ asset_cms('plugins/jQuery/jQuery-2.2.0.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->

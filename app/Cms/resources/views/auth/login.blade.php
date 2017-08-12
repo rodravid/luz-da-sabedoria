@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 text">
-                    <h1><strong>Vinci CMS</strong> Login</h1>
+                    <h1><strong>Luz da Sabedoria CMS</strong> Login</h1>
                 </div>
             </div>
             <div class="row">
