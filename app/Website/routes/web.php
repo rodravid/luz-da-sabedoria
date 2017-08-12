@@ -13,10 +13,10 @@
 
 Route::group(['middleware' => ['web']], function () use ($route) {
     Route::get('/', function () {
-        return view('website::master');
-    });
-});
+        return view('website::home');
+    })->name('home');
 
-Route::get('/donate', function () {
-    return view('donate');
+    Route::get('/donate', function () {
+        return view('website::donate');
+    })->name('donate');
 });
