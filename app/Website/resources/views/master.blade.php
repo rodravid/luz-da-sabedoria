@@ -11,6 +11,8 @@
     
     <title>Luz da Sabedoria</title>
     
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset_web('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     
@@ -31,7 +33,6 @@
 </head>
 
 <body id="page-top" class="index">
-
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container">
@@ -67,9 +68,9 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
-@yield('content')
-
+<div id="app">
+    @yield('content')
+</div>
 <footer>
     <div class="container">
         <div class="row">
@@ -101,7 +102,13 @@
 <script src="{{ asset_web('/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset_web('/js/minified.js') }}"></script>
 <script src="{{ asset_web('/js/agency.min.js') }}"></script>
+<script src="{{ asset('/js/vue/vue.min.js') }}"></script>
 <script src="{{ asset('/js/app.js') }}"></script>
+<script type="text/javascript">
+    new Vue({
+        el: "#app"
+    });
+</script>
 
 </body>
 

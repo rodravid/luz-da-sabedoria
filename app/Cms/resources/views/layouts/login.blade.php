@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ asset_cms("images/favicon.gif") }}">
 
-    <title>CMS Login - Vinci vinhos</title>
+    <title>CMS Login - Luz da Sabedoria</title>
 
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="{{ asset_cms('bootstrap/css/bootstrap.min.css') }}">

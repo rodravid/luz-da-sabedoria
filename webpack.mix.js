@@ -24,7 +24,8 @@ mix.js([
        'public/assets/website/vendor/bootstrap/css/bootstrap.min.css',
        'public/assets/website/vendor/font-awesome/css/font-awesome.min.css',
        'public/css/agency.min.css',
-       'app/Website/resources/assets/sass/app.scss'
+       'app/Website/resources/assets/sass/app.scss',
+       'app/Website/resources/assets/css/funky-radio-button.css'
     ], 'public/css/app.css')
     .styles([
         'public/fonts/vendor/googleapis/droid-serif.css',

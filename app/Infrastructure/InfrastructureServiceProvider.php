@@ -42,6 +42,12 @@ class InfrastructureServiceProvider extends ServiceProvider
             'App\Domain\ACL\Module\Module'
         );
 
+        $this->registerRepository(
+            'App\Domain\Project\ProjectRepository',
+            'App\Infrastructure\Project\DoctrineProjectRepository',
+            'App\Domain\Project\Project'
+        );
+
         $this->app->singleton('App\Infrastructure\Storage\StorageService', function() {
             return new StorageService($this->app['filesystem'], $this->app['config']);
         });
