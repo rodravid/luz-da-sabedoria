@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'cms',
+        'passwords' => 'admins',
     ],
 
     /*
@@ -36,15 +36,10 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'cms' => [
             'driver' => 'session',
-            'provider' => 'users',
-        ],
-
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-        ],
+            'provider' => 'admins',
+        ]
     ],
 
     /*
@@ -65,15 +60,10 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
+        'admins' => [
+            'driver' => 'doctrine',
+            'model' => App\Domain\Admin\Admin::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -92,9 +82,10 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
+        'admins' => [
+            'provider' => 'admins',
+            'email' => 'cms::auth.emails.password',
+            'table' => 'admins_password_resets',
             'expire' => 60,
         ],
     ],

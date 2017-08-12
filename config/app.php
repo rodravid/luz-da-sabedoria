@@ -168,14 +168,26 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
 
+        Barryvdh\Debugbar\ServiceProvider::class,
+        LaravelDoctrine\Extensions\GedmoExtensionsServiceProvider::class,
+        LaravelDoctrine\ORM\DoctrineServiceProvider::class,
+        LaravelDoctrine\ORM\Auth\Passwords\PasswordResetServiceProvider::class,
+        LaravelDoctrine\ACL\AclServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Collective\Remote\RemoteServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Laracasts\Matryoshka\MatryoshkaServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Cms\Providers\CmsServiceProvider::class,
+        App\Website\Providers\WebsiteServiceProvider::class,
+        App\Domain\DomainServiceProvider::class,
+        App\Infrastructure\InfrastructureServiceProvider::class,
 
     ],
 
