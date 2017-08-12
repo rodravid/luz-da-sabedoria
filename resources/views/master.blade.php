@@ -65,6 +65,9 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contato</a>
                 </li>
+                <li>
+                    <a class="page-scroll" href="/donate">Doe com PagSeguro!</a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -249,6 +252,7 @@
         </div>
     </div>
 </aside>-->
+
 
 <!-- Contact Section -->
 <section id="contact">
