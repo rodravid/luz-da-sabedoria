@@ -9,15 +9,15 @@
 
         <div class="form-group" style="padding: 12px;">
             <div class="funkyradio" style="height: 50px;">
-                <div class="col-sm-12 col-md-offset-2 col-md-3 text-center funkyradio-info">
+                <div class="col-sm-12 col-md-offset-2 col-md-3 text-center funkyradio-theme">
                     <input type="radio" name="donation-type" v-model="donationType" value="time" id="donateTime" />
                     <label for="donateTime"> Tempo</label>
                 </div>
-                <div class="col-sm-12 col-md-3 text-center funkyradio-info">
+                <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
                     <input type="radio" name="donation-type" v-model="donationType" value="partner" id="partner" />
                     <label for="partner">Parcerias</label>
                 </div>
-                <div class="col-sm-12 col-md-3 text-center funkyradio-info">
+                <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
                     <input type="radio" name="radio" id="radio6" />
                     <input type="radio" name="donation-type" v-model="donationType" value="money" id="donateMoney" />
                     <label for="donateMoney">Bens</label>
@@ -93,7 +93,7 @@
 </template>
 <style>
     .fade-enter-active, .fade-leave-active {
-      transition: opacity .5s
+      transition: opacity .35s
     }
     .fade-enter, .fade-leave-to {
       opacity: 0

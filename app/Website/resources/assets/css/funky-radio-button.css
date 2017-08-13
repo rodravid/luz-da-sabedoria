@@ -6,7 +6,7 @@
 .funkyradio label {
     width: 100%;
     border-radius: 3px;
-    border: 1px solid #D1D3D4;
+    border: 1px solid #C2C2C2;
     font-weight: normal;
 }
 
@@ -55,7 +55,7 @@
 
 .funkyradio input[type="radio"]:checked ~ label,
 .funkyradio input[type="checkbox"]:checked ~ label {
-    color: white;
+    color: #4a3e3e;
 }
 
 .funkyradio input[type="radio"]:checked ~ label:before,
@@ -105,4 +105,33 @@
 .funkyradio-info input[type="checkbox"]:checked ~ label:before {
     color: #fff;
     background-color: #5bc0de;
+}
+
+.funkyradio-theme input[type="radio"]:checked ~ label:before,
+.funkyradio-theme input[type="checkbox"]:checked ~ label:before {
+    color: #ccc;
+    background-color: #4b0b6c;
+}
+
+.funkyradio-theme input[type="radio"]:checked ~ label,
+.funkyradio-theme input[type="checkbox"]:checked ~ label {
+    border: 1px solid #4b0b6c;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #C2C2C2;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #C2C2C2;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #C2C2C2;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #C2C2C2;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #C2C2C2;
 }
