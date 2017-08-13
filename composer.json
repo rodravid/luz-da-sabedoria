@@ -63,7 +63,7 @@
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "rm -rf ./bootstrap/cache/*",
-//            "php clear_doctrine_metadata.php",
+            "php clear_doctrine_metadata.php",
             "php artisan clear-compiled",
             "php artisan ide-helper:generate",
             "php artisan optimize --force",
