@@ -12,9 +12,7 @@
 */
 
 Route::group(['middleware' => ['web']], function () use ($route) {
-    Route::get('/', function () {
-        return view('website::home');
-    })->name('home');
+    Route::get('/', 'WebsiteController@index')->name('home');
 
     Route::get('/donate', function () {
         return view('website::donate');

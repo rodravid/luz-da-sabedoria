@@ -7,4 +7,6 @@ interface ProjectRepository
     public function save($entity);
 
     public function findOrFail($id);
+
+    public function getAllAvailable();
 }
