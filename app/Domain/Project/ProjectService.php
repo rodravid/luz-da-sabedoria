@@ -23,7 +23,7 @@ class ProjectService
     public function create(array $data)
     {
         return $this->saveProject($data, function ($data) {
-            return $project = Project::make($data);
+            return $project = Project::make(array_except($data, 'banner'));
         });
     }
 

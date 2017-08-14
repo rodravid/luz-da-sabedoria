@@ -18,7 +18,7 @@
         <div class="col-lg-12">
             <div class="form-group">
                 <label for="txtShowcaseDescription">Descrição</label>
-                {!! Form::textarea('description', null, ['id' => 'txtShowcaseDescription', 'class' => 'form-control html-editor', 'placeholder' => 'Digite a descrição', 'rows' => '3']) !!}
+                {!! Form::textarea('description', null, ['id' => 'txtShowcaseDescription', 'class' => 'form-control html-editor', 'placeholder' => 'Digite a descrição', 'rows' => '10']) !!}
             </div>
         </div>
     
