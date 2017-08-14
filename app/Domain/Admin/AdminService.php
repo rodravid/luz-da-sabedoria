@@ -24,21 +24,19 @@ class AdminService
 
     private $storage;
 
-    private $imageRepository;
+//    private $imageRepository;
 
     public function __construct(
         AdminRepository $repository,
         EntityManagerInterface $entityManager,
         AdminValidator $validator,
-        StorageService $storage,
-        ImageRepository $imageRepository
+        StorageService $storage
     )
     {
         $this->repository = $repository;
         $this->entityManager = $entityManager;
         $this->validator = $validator;
         $this->storage = $storage;
-        $this->imageRepository = $imageRepository;
     }
 
     public function create(array $adminData)
@@ -77,7 +75,7 @@ class AdminService
 
             $this->storage->storeImage($photo);
 
-            $photo = $this->imageRepository->save($photo);
+//            $photo = $this->imageRepository->save($photo);
 
             $this->entityManager->getConnection()->commit();
 
@@ -95,7 +93,7 @@ class AdminService
         $user->removePhoto($photo);
 
         $this->repository->save($user);
-        $this->imageRepository->save($photo);
+//        $this->imageRepository->save($photo);
 
         $this->storage->deleteImage($photo);
     }

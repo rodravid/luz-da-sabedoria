@@ -3,6 +3,7 @@
 namespace App\Cms\Http\Project;
 
 use App\Cms\Http\Controller;
+use App\Domain\Project\ProjectRepository;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -29,7 +30,7 @@ class ProjectController extends Controller
     {
         $project = $this->repository->findOrFail($id);
 
-        return $this->view('projects.edit', compact('project');
+        return $this->view('projects.edit', compact('project'));
     }
 
     public function show($id)
