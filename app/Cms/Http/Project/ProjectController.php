@@ -3,17 +3,32 @@
 namespace App\Cms\Http\Project;
 
 use App\Cms\Http\Controller;
+use App\Core\Services\Datatables\DatatablesResponse;
+use App\Domain\Image\ImageService;
 use App\Domain\Project\ProjectRepository;
+use App\Domain\Project\ProjectService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Laracasts\Flash\Flash;
 
 class ProjectController extends Controller
 {
-    private $repository;
 
-    public function __construct(ProjectRepository $repository)
+    use DatatablesResponse;
+
+    protected $service;
+
+    protected $repository;
+
+    protected $datatable = 'App\Infrastructure\Project\Datatables\ProjectCmsDatatable';
+
+    private $imageService;
+
+    public function __construct(ProjectRepository $repository, ProjectService $service, ImageService $imageService)
     {
-
         $this->repository = $repository;
+        $this->service = $service;
+        $this->imageService = $imageService;
     }
 
     public function index()
@@ -33,45 +48,17 @@ class ProjectController extends Controller
         return $this->view('projects.edit', compact('project'));
     }
 
-    public function show($id)
-    {
-        $customer = $this->repository->findOrFail($id);
-        $customer = $this->presenter->model($customer, CustomerPresenter::class);
-
-        $addresses = $this->addressRepository->getAllByCustomer($id);
-
-        $orders = $this->orderRepository->getByCustomer($id, 10);
-        $orders = $this->presenter->paginator($orders, OrderPresenter::class);
-
-        $integrationLogs = IntegrationLogger::type('customer')->getByResourceId($id);
-
-        $carts = $this->presenter->collection($this->cartRepository->getLastCustomerCarts($customer->getObject()), ShoppingCartPresenter::class);
-
-        return $this->view('projects.show', compact('customer', 'addresses', 'orders', 'carts', 'integrationLogs'));
-    }
-
-    public function showCart($id, $cartId)
-    {
-        $customer = $this->repository->findOrFail($id);
-        $customer = $this->presenter->model($customer, CustomerPresenter::class);
-
-        $cart = $this->cartRepository->find($cartId);
-        $cart = $this->presenter->model($cart, ShoppingCartPresenter::class);
-
-        return $this->view('projects.show-cart', compact('customer', 'cart'));
-    }
-
     public function store(Request $request)
     {
         try {
 
             $data = $request->all();
 
-            $customer = $this->service->create($data);
+            $project = $this->service->create($data);
 
-            Flash::success("Cliente {$customer->getName()} criado com sucesso!");
+            Flash::success("Projeto {$project->getTitle()} criado com sucesso!");
 
-            return Redirect::route($this->getEditRouteName(), $customer->getId());
+            return Redirect::route($this->getEditRouteName(), $project->getId());
 
         } catch (ValidationException $e) {
 
@@ -85,17 +72,17 @@ class ProjectController extends Controller
         }
     }
 
-    public function update(Request $request, $customerId)
+    public function update(Request $request, $projectId)
     {
         try {
 
             $data = $request->all();
 
-            $customer = $this->service->update($data, $customerId);
+            $project = $this->service->update($data, $projectId);
 
-            Flash::success("Cliente {$customer->getName()} atualizado com sucesso!");
+            Flash::success("Projeto {$project->getTitle()} atualizado com sucesso!");
 
-            return Redirect::route($this->getEditRouteName(), $customer->getId())
+            return Redirect::route($this->getEditRouteName(), $project->getId())
                 ->withInput(['current-tab' => $request->get('current-tab')]);
 
         } catch (ValidationException $e) {
@@ -113,13 +100,13 @@ class ProjectController extends Controller
 
     public function destroy($customerId)
     {
-        $customer = $this->repository->find($customerId);
+        $project = $this->repository->find($customerId);
 
         try {
 
-            $this->repository->delete($customer);
+            $this->repository->delete($project);
 
-            Flash::success("Cliente {$customer->getName()} excluído com sucesso!");
+            Flash::success("Projeto {$project->getName()} excluído com sucesso!");
 
             return Redirect::route($this->getListRouteName());
 
@@ -128,6 +115,28 @@ class ProjectController extends Controller
             Flash::error($e->getMessage());
             return Redirect::back();
         }
+    }
+
+    public function removeBanner($project)
+    {
+        try {
+
+            $project = $this->repository->findOrFail($project);
+
+            $this->imageService->removeFrom($project, $project->getBanner());
+
+            $this->repository->save($project);
+
+            Flash::success("Banner excluído com sucesso!");
+
+            return Redirect::back();
+
+        } catch (Exception $e) {
+
+            Flash::error($e->getMessage());
+            return Redirect::back();
+        }
+
     }
 
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d452130565aa1a76b0a5c73b6797106a",
+    "content-hash": "40ca7a35ea1ee1da3f01ffffe138155a",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -882,23 +882,23 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.6",
+            "version": "v2.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "e6c434196c8ef058239aaa0724b4aadb0107940b"
+                "reference": "e3aa3f2d1d7ac4bc732f8630f78fcb92d2885e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/e6c434196c8ef058239aaa0724b4aadb0107940b",
-                "reference": "e6c434196c8ef058239aaa0724b4aadb0107940b",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/e3aa3f2d1d7ac4bc732f8630f78fcb92d2885e68",
+                "reference": "e3aa3f2d1d7ac4bc732f8630f78fcb92d2885e68",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "~1.4",
                 "doctrine/collections": "~1.2",
-                "doctrine/common": ">=2.5-dev,<2.8-dev",
-                "doctrine/dbal": ">=2.5-dev,<2.6-dev",
+                "doctrine/common": ">=2.5-dev,<2.9-dev",
+                "doctrine/dbal": ">=2.5-dev,<2.7-dev",
                 "doctrine/instantiator": "~1.0.1",
                 "ext-pdo": "*",
                 "php": ">=5.4",
@@ -954,7 +954,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-12-18T15:42:34+00:00"
+            "time": "2017-08-13T18:46:56+00:00"
         },
         {
             "name": "erusev/parsedown",

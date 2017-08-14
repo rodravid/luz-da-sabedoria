@@ -184,10 +184,10 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Infrastructure\InfrastructureServiceProvider::class,
+        App\Domain\DomainServiceProvider::class,
         App\Cms\Providers\CmsServiceProvider::class,
         App\Website\Providers\WebsiteServiceProvider::class,
-        App\Domain\DomainServiceProvider::class,
-        App\Infrastructure\InfrastructureServiceProvider::class,
 
     ],
 
@@ -237,7 +237,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
 
     ],
 
+    'storage_web_path' => env('STORAGE_WEB_PATH', '/storage'),
 ];

@@ -16,11 +16,13 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'projects', 'as' => 'projects.'], function () {
             Route::get('/', 'Project\\ProjectController@index')->name('list');
             Route::get('/new', 'Project\\ProjectController@create')->name('create');
-            Route::post('/', 'Project\\ProjectController@store')->name('store');
+            Route::post('/', 'Project\\ProjectController@store')->name('create#store');
             Route::get('/edit/{post}', 'Project\\ProjectController@edit')->name('edit');
-            Route::put('/{post}', 'Project\\ProjectController@update')->name('update');
-            Route::delete('/{post}/delete', 'Project\\ProjectController@delete')->name('delete');
+            Route::put('/{post}', 'Project\\ProjectController@update')->name('edit#update');
+            Route::delete('/{post}/delete', 'Project\\ProjectController@delete')->name('destroy');
             Route::post('/datatable', 'Project\\ProjectController@datatable')->name('list#datatable');
+
+            Route::delete('/{project}/remove-banner', 'Project\\ProjectController@removeBanner')->name('edit#remove-banner');
         });
     });
 
