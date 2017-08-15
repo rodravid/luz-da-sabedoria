@@ -29569,6 +29569,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -29595,14 +29601,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "col-md-8 col-sm-offset-2 col-sm-12"
   }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "form-group",
+    staticClass: "row",
     staticStyle: {
       "padding": "12px"
     }
   }, [_c('div', {
+    staticClass: "col-sm-12"
+  }, [_c('div', {
     staticClass: "funkyradio",
     staticStyle: {
-      "height": "50px"
+      "height": "auto"
     }
   }, [_c('div', {
     staticClass: "col-sm-12 col-md-offset-2 col-md-3 text-center funkyradio-theme"
@@ -29691,14 +29699,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "for": "donateMoney"
     }
-  }, [_vm._v("Bens")])])])]), _vm._v(" "), _c('transition', {
+  }, [_vm._v("Bens")])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row",
+    staticStyle: {
+      "padding": "12px",
+      "height": "auto"
+    }
+  }, [_c('div', {
+    staticClass: "col-sm-12"
+  }, [_c('transition', {
     attrs: {
       "name": "component-fade",
       "mode": "out-in"
     }
   }, [_c(_vm.donationType, {
     tag: "component"
-  })], 1), _vm._v(" "), _vm._m(1)], 1)
+  })], 1)], 1)]), _vm._v(" "), _vm._m(1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"

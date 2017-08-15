@@ -7,27 +7,33 @@
             </div>
         </div>
 
-        <div class="form-group" style="padding: 12px;">
-            <div class="funkyradio" style="height: 50px;">
-                <div class="col-sm-12 col-md-offset-2 col-md-3 text-center funkyradio-theme">
-                    <input type="radio" name="donation-type" v-model="donationType" value="donate-time" id="donateTime" />
-                    <label for="donateTime"> Tempo</label>
-                </div>
-                <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
-                    <input type="radio" name="donation-type" v-model="donationType" value="be-partner" id="partner" />
-                    <label for="partner">Parcerias</label>
-                </div>
-                <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
-                    <input type="radio" name="radio" id="radio6" />
-                    <input type="radio" name="donation-type" v-model="donationType" value="donate-money" id="donateMoney" />
-                    <label for="donateMoney">Bens</label>
+        <div class="row" style="padding: 12px;">
+            <div class="col-sm-12">
+                <div class="funkyradio" style="height: auto;">
+                    <div class="col-sm-12 col-md-offset-2 col-md-3 text-center funkyradio-theme">
+                        <input type="radio" name="donation-type" v-model="donationType" value="donate-time" id="donateTime" />
+                        <label for="donateTime"> Tempo</label>
+                    </div>
+                    <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
+                        <input type="radio" name="donation-type" v-model="donationType" value="be-partner" id="partner" />
+                        <label for="partner">Parcerias</label>
+                    </div>
+                    <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
+                        <input type="radio" name="radio" id="radio6" />
+                        <input type="radio" name="donation-type" v-model="donationType" value="donate-money" id="donateMoney" />
+                        <label for="donateMoney">Bens</label>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <transition name="component-fade" mode="out-in">
-            <component :is="donationType"></component>
-        </transition>
+        <div class="row" style="padding: 12px;height: auto;">
+            <div class="col-sm-12">
+                <transition name="component-fade" mode="out-in">
+                    <component :is="donationType"></component>
+                </transition>
+            </div>
+        </div>
 
         <form name="sentMessage" id="contactForm" novalidate>
             <div class="row">
