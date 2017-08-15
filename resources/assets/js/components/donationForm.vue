@@ -10,73 +10,50 @@
         <div class="form-group" style="padding: 12px;">
             <div class="funkyradio" style="height: 50px;">
                 <div class="col-sm-12 col-md-offset-2 col-md-3 text-center funkyradio-theme">
-                    <input type="radio" name="donation-type" v-model="donationType" value="time" id="donateTime" />
+                    <input type="radio" name="donation-type" v-model="donationType" value="donate-time" id="donateTime" />
                     <label for="donateTime"> Tempo</label>
                 </div>
                 <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
-                    <input type="radio" name="donation-type" v-model="donationType" value="partner" id="partner" />
+                    <input type="radio" name="donation-type" v-model="donationType" value="be-partner" id="partner" />
                     <label for="partner">Parcerias</label>
                 </div>
                 <div class="col-sm-12 col-md-3 text-center funkyradio-theme">
                     <input type="radio" name="radio" id="radio6" />
-                    <input type="radio" name="donation-type" v-model="donationType" value="money" id="donateMoney" />
+                    <input type="radio" name="donation-type" v-model="donationType" value="donate-money" id="donateMoney" />
                     <label for="donateMoney">Bens</label>
                 </div>
             </div>
-            <!--<div class="col-sm-12 col-md-offset-2 col-md-3 text-center">-->
-            <!--<input type="radio" name="donation-type" v-model="donationType" value="time" id="donateTime"> <label for="donateTime"> Tempo</label>-->
-            <!--</div>-->
-            <!--<div class="col-sm-12 col-md-3 text-center">-->
-            <!--<input type="radio" name="donation-type" v-model="donationType" value="partner" id="partner"> <label for="partner">Parcerias</label>-->
-            <!--</div>-->
-            <!--<div class="col-sm-12 col-md-3 text-center">-->
-            <!--<input type="radio" name="donation-type" v-model="donationType" value="money" id="donateMoney"> <label for="donateMoney">Bens</label>-->
-            <!--</div>-->
         </div>
 
-        <transition name="fade">
-            <div v-show="donationType == 'money'">
-                <div class="text-center">
-                    <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="POST">
-                        <input type="hidden" name="currency" value="BRL" />
-                        <input type="hidden" name="receiverEmail" value="digo.david.oliveira@gmail.com" />
-                        <input type="hidden" name="iot" value="button" />
-                        <!--<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/120x53-doar-azul.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />-->
-                        <div class="col-md-6 col-md-offset-3">
-                            <input type="submit" class="btn btn-default btn-block" name="submit"
-                                   value="Doe pelo PagSeguro" style="height: 50px;" />
-                        </div>
-                    </form>
-                </div>
-
-                <div class="col-sm-12 text-center">
-                    <h3>OU</h3>
-                    <h3 class="section-subheading" style="margin: -6px 0px 15px 0px;">Entre em contato.</h3>
-                </div>
-            </div>
+        <transition name="component-fade" mode="out-in">
+            <component :is="donationType"></component>
         </transition>
 
         <form name="sentMessage" id="contactForm" novalidate>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
+                        <h4 class="">Nome:</h4>
                         <input type="text" class="form-control" placeholder="Seu nome *" id="name" required
-                               data-validation-required-message="Please enter your name.">
+                               data-validation-required-message="Por favor, insira seu nome.">
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
+                        <h4 class="">Email:</h4>
                         <input type="email" class="form-control" placeholder="Seu Email *" id="email" required
-                               data-validation-required-message="Please enter your email address.">
+                               data-validation-required-message="Por favor, insira seu e-mail.">
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="form-group">
+                        <h4 class="">Telefone:</h4>
                         <input type="tel" class="form-control" placeholder="Seu telefone *" id="phone" required
-                               data-validation-required-message="Please enter your phone number.">
+                               data-validation-required-message="Por favor, insira seu telefone.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
+                        <h4 class="">Mensagem:</h4>
                         <textarea class="form-control" placeholder="Sua mensagem *" id="message" required
                                   data-validation-required-message="Por favor deixe um recado."></textarea>
                         <p class="help-block text-danger"></p>
@@ -92,19 +69,29 @@
     </div>
 </template>
 <style>
-    .fade-enter-active, .fade-leave-active {
-      transition: opacity .35s
+    .component-fade-enter-active, .component-fade-leave-active {
+        transition: all .3s ease;
     }
-    .fade-enter, .fade-leave-to {
-      opacity: 0
+    .component-fade-enter, .component-fade-leave-to {
+        transform: translateX(10px);
+        opacity: 0;
     }
 
 </style>
 <script>
+    import BePartner from './donationMessages/bePartner.vue'
+    import DonateMoney from './donationMessages/donateMoney.vue'
+    import DonateTime from './donationMessages/donateTime.vue'
+
     export default{
+        components: {
+            bePartner: BePartner,
+            donateMoney: DonateMoney,
+            donateTime: DonateTime
+        },
         data(){
             return{
-                donationType: "time"
+                donationType: "donate-time"
             }
         }
     }

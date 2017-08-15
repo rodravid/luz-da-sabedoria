@@ -32,7 +32,7 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Associação Beneficiente Luz da Sabedoria</div>
                 <div class="intro-heading">Você é mais forte do que imagina!</div>
-                <a href="#values" class="page-scroll btn btn-xl">Saiba como ajudar!</a>
+                <a href="{{ route('donate') }}" class="page-scroll btn btn-xl">Saiba como ajudar!</a>
             </div>
         </div>
     </header>
@@ -158,53 +158,61 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <div class="team-member">
-                        <img src="{{ asset_web('img/team/1.jpg') }}" class="img-responsive img-circle" alt="">
-                        <h4>Rosa</h4>
-                        {{--<p class="text-muted">Lead Designer</p>--}}
+                        <img src="{{ asset_web('img/team/erma_mayumi.jpeg') }}" class="img-responsive img-circle" alt="" style="width: 360px; height: 360px;">
+                        <h4>Érika Mayume Ozahata</h4>
+                        <p class="text-muted" style="margin-bottom: 0px">Diretora do Cei Cantinho da Tia Isaura</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Licenciada em Pedagogia</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Pós Graduada em Educação Infatil</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="team-member">
-                        <img src="{{ asset_web('img/team/breatriz_martins.jpeg') }}" class="img-responsive img-circle" alt="">
-                        <h4>Beatriz Martins</h4>
-                        {{--<p class="text-muted">Lead Marketer</p>--}}
+                        <img src="{{ asset_web('img/team/adriana.jpeg') }}" class="img-responsive img-circle" alt="" style="width: 360px; height: 360px;">
+                        <h4>Adriana Jerónimo de Araújo</h4>
+                        <p class="text-muted" style="margin-bottom: 0px">Coordenadora no CEI cantinho da Tia Isaura</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Licenciada em Pedagogia</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Pós Graduada em psicopedagogia</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="team-member">
-                        <img src="{{ asset_web('img/team/adriana.jpeg') }}" class="img-responsive img-circle" alt="">
-                        <h4>Adriana</h4>
-                        {{--<p class="text-muted">Lead Marketer</p>--}}
+                        <img src="{{ asset_web('img/team/jessica_sayuri.jpeg') }}" class="img-responsive img-circle" alt="" style="width: 360px; height: 360px;">
+                        <h4>Jessica Sayuri Ozahata</h4>
+                        <p class="text-muted" style="margin-bottom: 0px">Auxiliar administrativa no CEI Cantinho da tia Isaura</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Estudante de Pedagogia</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <div class="team-member">
-                        <img src="{{ asset_web('img/team/erma_mayumi.jpeg') }}" class="img-responsive img-circle" alt="">
-                        <h4>Erma Mayumi</h4>
-                        {{--<p class="text-muted">Lead Designer</p>--}}
+                        <img src="{{ asset_web('img/team/estalamar.jpeg') }}" class="img-responsive img-circle" alt="" style="width: 360px; height: 360px;">
+                        <h4>Estalamar Monteiro da Costa</h4>
+                        <p class="text-muted" style="margin-bottom: 0px">Diretora do CEI Luz da Sabedoria</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Licenciada em Pedagogia</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Autora do livro: "O Lápis Preto"</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="team-member">
-                        <img src="{{ asset_web('img/team/estalamar.jpeg') }}" class="img-responsive img-circle" alt="">
-                        <h4>Estalamar</h4>
-                        {{--<p class="text-muted">Lead Marketer</p>--}}
+                        <img src="{{ asset_web('img/team/rita_cassia.jpeg') }}" class="img-responsive img-circle" alt="" style="width: 360px; height: 360px;">
+                        <h4>Rita de Cassia da Silva Barros</h4>
+                        <p class="text-muted">Coordenadora do CEI Luz da Sabedoria</p>
+                        <p class="text-muted">Licenciada em Pedagogia</p>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="team-member">
-                        <img src="{{ asset_web('img/team/jessica_sayuri.jpeg') }}" class="img-responsive img-circle" alt="">
-                        <h4>Jessica Sayuri</h4>
-                        {{--<p class="text-muted">Lead Marketer</p>--}}
+                        <img src="{{ asset_web('img/team/breatriz_martins.jpeg') }}" class="img-responsive img-circle" alt="" style="width: 360px; height: 360px;">
+                        <h4>Beatriz Silva Martins</h4>
+                        <p class="text-muted" style="margin-bottom: 0px">Aux. Adimistrativo no CEI Luz da Sabedoria</p>
+                        <p class="text-muted" style="margin-bottom: 0px">Estudante de pedagogia e Matemática</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                        laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                    <p class="large text-muted"></p>
                 </div>
             </div>
         </div>
