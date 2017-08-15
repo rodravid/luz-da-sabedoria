@@ -37,7 +37,6 @@
         </div>
     </header>
     
-    <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
             <div class="row">
@@ -71,7 +70,6 @@
         </div>
     </section>
     
-    <!-- About Section -->
     <section id="about" class="bg-light-gray">
         <div class="container">
             <div class="row">
@@ -103,7 +101,6 @@
         </div>
     </section>
     
-    <!-- Services Section -->
     <section id="values">
         <div class="container">
             <div class="row">
@@ -145,7 +142,6 @@
         </div>
     </section>
     
-    <!-- Team Section -->
     <section id="team" class="bg-light-gray img-ceter">
         <div class="container">
             <div class="row">
@@ -210,11 +206,6 @@
                     </div>
                 </div>
             </div>
-            {{--<div class="row">--}}
-                {{--<div class="col-lg-8 col-lg-offset-2 text-center">--}}
-                    {{--<p class="large text-muted"></p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
         </div>
     </section>
     
@@ -246,14 +237,13 @@
         </div>
     </aside>-->
     
-    
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Ajude-nos</h2>
-                    <h3 class="section-subheading cor-saiba-mais">Com a sua ajuda poderemos ajudar mais crianças!</h3>
+                    <h4 class="section-heading">Com a sua ajuda poderemos ajudar mais crianças!</h4>
                 </div>
             </div>
             <div class="row">
