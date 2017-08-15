@@ -8,14 +8,21 @@ use Doctrine\ORM\EntityManagerInterface;
 class DashboardController extends Controller
 {
 
+    /**
+     * @var EntityManagerInterface
+     */
+    private $em;
+
     public function __construct(EntityManagerInterface $em)
     {
-        parent::__construct($em);
+        $this->em = $em;
     }
 
     public function index()
     {
-        return $this->view('dashboard.index');
+        $numberOfProjects = array_first($this->em->createQuery('SELECT COUNT(p.id) FROM App\Domain\Project\Project p')->getOneOrNullResult());
+
+        return $this->view('dashboard.index', compact('numberOfProjects'));
     }
 
 }
