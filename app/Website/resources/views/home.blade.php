@@ -156,18 +156,48 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 col-md-offset-2 col-md-4">
+                <div class="col-sm-12 col-md-4">
                     <div class="team-member">
                         <img src="{{ asset_web('img/team/1.jpg') }}" class="img-responsive img-circle" alt="">
                         <h4>Rosa</h4>
-                        <p class="text-muted">Lead Designer</p>
+                        {{--<p class="text-muted">Lead Designer</p>--}}
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="team-member">
-                        <img src="{{ asset_web('img/team/2.jpg') }}" class="img-responsive img-circle" alt="">
-                        <h4>Carlos</h4>
-                        <p class="text-muted">Lead Marketer</p>
+                        <img src="{{ asset_web('img/team/breatriz_martins.jpeg') }}" class="img-responsive img-circle" alt="">
+                        <h4>Beatriz Martins</h4>
+                        {{--<p class="text-muted">Lead Marketer</p>--}}
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="team-member">
+                        <img src="{{ asset_web('img/team/adriana.jpeg') }}" class="img-responsive img-circle" alt="">
+                        <h4>Adriana</h4>
+                        {{--<p class="text-muted">Lead Marketer</p>--}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="team-member">
+                        <img src="{{ asset_web('img/team/erma_mayumi.jpeg') }}" class="img-responsive img-circle" alt="">
+                        <h4>Erma Mayumi</h4>
+                        {{--<p class="text-muted">Lead Designer</p>--}}
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="team-member">
+                        <img src="{{ asset_web('img/team/estalamar.jpeg') }}" class="img-responsive img-circle" alt="">
+                        <h4>Estalamar</h4>
+                        {{--<p class="text-muted">Lead Marketer</p>--}}
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="team-member">
+                        <img src="{{ asset_web('img/team/jessica_sayuri.jpeg') }}" class="img-responsive img-circle" alt="">
+                        <h4>Jessica Sayuri</h4>
+                        {{--<p class="text-muted">Lead Marketer</p>--}}
                     </div>
                 </div>
             </div>
