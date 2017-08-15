@@ -15,7 +15,7 @@ class InfrastructureServiceProvider extends ServiceProvider
 
         $this->registerRepository(
             'App\Domain\User\UserRepository',
-            'App\Infrastructure\User\DoctrineUserRepository',
+            'App\Infrastructure\Users\DoctrineUserRepository',
             'App\Domain\User\User'
         );
         $this->registerRepository(
@@ -48,6 +48,12 @@ class InfrastructureServiceProvider extends ServiceProvider
             'App\Domain\Project\Project'
         );
 
+        $this->registerRepository(
+            'App\Domain\Image\ImageRepository',
+            'App\Infrastructure\Image\DoctrineImageRepository',
+            'App\Domain\Image\Image'
+        );
+
         $this->app->singleton('App\Infrastructure\Storage\StorageService', function() {
             return new StorageService($this->app['filesystem'], $this->app['config']);
         });
@@ -75,6 +81,8 @@ class InfrastructureServiceProvider extends ServiceProvider
             'App\Domain\ACL\Permission\PermissionRepository',
             'App\Domain\ACL\Module\ModuleRepository',
             'App\Infrastructure\Storage\StorageService',
+            'App\Domain\Project\ProjectRepository',
+            'App\Domain\Image\ImageRepository',
         ];
     }
 

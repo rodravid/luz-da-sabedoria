@@ -5,7 +5,7 @@ namespace App\Infrastructure\Datatables;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use LaravelDoctrine\ACL\Contracts\HasPermissions;
 use App\Domain\ACL\ACLService;
-use Domain\Core\Model;
+use App\Domain\Core\Model;
 
 abstract class AbstractDatatables
 {

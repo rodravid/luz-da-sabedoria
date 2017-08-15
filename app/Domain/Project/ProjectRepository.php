@@ -4,9 +4,9 @@ namespace App\Domain\Project;
 
 interface ProjectRepository
 {
-    public function create(array $data);
+    public function save($entity);
 
     public function findOrFail($id);
 
-    public function store(array $data);
+    public function getAllAvailable();
 }

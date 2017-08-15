@@ -4,6 +4,7 @@ namespace App\Infrastructure\Storage;
 
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Config\Repository as Config;
+use Illuminate\Support\Facades\Storage;
 use RuntimeException;
 use App\Domain\File\FileInterface;
 use App\Domain\Image\Image;
@@ -53,7 +54,8 @@ class StorageService
 
     public function deleteImage(Image $image)
     {
-        $this->disk()->delete($image->getUploadPathName());
+        Storage::delete($image->getUploadPathName());
+//        $this->disk()->delete($image->getUploadPathName());
 
         if ($image->hasVersions()) {
 

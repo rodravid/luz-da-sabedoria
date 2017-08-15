@@ -18,7 +18,7 @@
                 <div class="box box-primary">
                     <div class="box-body">
 
-                        @if($loggedUser->hasPermissionTo('cms.' . $currentModule->getName() . '.create'))
+                        @if(cmsUser()->hasPermissionTo('cms.' . $currentModule->getName() . '.create'))
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="panel">

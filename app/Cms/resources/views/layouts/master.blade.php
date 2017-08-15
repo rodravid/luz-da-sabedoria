@@ -192,7 +192,7 @@
     <!-- Jquery editable -->
     <script src="{{ asset_cms('plugins/jquery-editable/jquery.editable.min.js') }}"></script>
     <!-- jQuery Countdown -->
-    <script src="{{ asset_web('js/jquery.countdown.min.js') }}" type="text/javascript"></script>
+{{--    <script src="{{ asset_web('js/jquery.countdown.min.js') }}" type="text/javascript"></script>--}}
     <!-- AngularJS -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <!-- AdminLTE App -->

@@ -8,13 +8,12 @@ use App\Infrastructure\Common\DoctrineBaseRepository;
 class DoctrineProjectRepository extends DoctrineBaseRepository implements ProjectRepository
 {
 
-    public function create(array $data)
+    public function getAllAvailable()
     {
-        // TODO: Implement create() method.
-    }
+        $qb = $this->createQueryBuilder('p');
 
-    public function store(array $data)
-    {
-        // TODO: Implement store() method.
+        $qb->where('p.status = 1');
+
+        return $qb->getQuery()->getResult();
     }
 }
